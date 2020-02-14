@@ -137,16 +137,16 @@ type (
 		RefundChannel2       string `xml:"refund_channel_2,omitempty" url:"refund_channel_2,omitempty"`               // 否 退款渠道
 		RefundChannel3       string `xml:"refund_channel_3,omitempty" url:"refund_channel_3,omitempty"`               // 否 退款渠道
 		RefundChannel4       string `xml:"refund_channel_4,omitempty" url:"refund_channel_4,omitempty"`               // 否 退款渠道
-		RefundFee0           string `xml:"refund_fee_0,omitempty" url:"refund_fee_0,omitempty"`                       // 是 申请退款金额
-		RefundFee1           string `xml:"refund_fee_1,omitempty" url:"refund_fee_1,omitempty"`                       // 是 申请退款金额
-		RefundFee2           string `xml:"refund_fee_2,omitempty" url:"refund_fee_2,omitempty"`                       // 是 申请退款金额
-		RefundFee3           string `xml:"refund_fee_3,omitempty" url:"refund_fee_3,omitempty"`                       // 是 申请退款金额
-		RefundFee4           string `xml:"refund_fee_4,omitempty" url:"refund_fee_4,omitempty"`                       // 是 申请退款金额
-		SettlementRefundFee0 string `xml:"settlement_refund_fee_0,omitempty" url:"settlement_refund_fee_0,omitempty"` // 否 退款金额
-		SettlementRefundFee1 string `xml:"settlement_refund_fee_1,omitempty" url:"settlement_refund_fee_1,omitempty"` // 否 退款金额
-		SettlementRefundFee2 string `xml:"settlement_refund_fee_2,omitempty" url:"settlement_refund_fee_2,omitempty"` // 否 退款金额
-		SettlementRefundFee3 string `xml:"settlement_refund_fee_3,omitempty" url:"settlement_refund_fee_3,omitempty"` // 否 退款金额
-		SettlementRefundFee4 string `xml:"settlement_refund_fee_4,omitempty" url:"settlement_refund_fee_4,omitempty"` // 否 退款金额
+		RefundFee0           int    `xml:"refund_fee_0,omitempty" url:"refund_fee_0,omitempty"`                       // 是 申请退款金额
+		RefundFee1           int    `xml:"refund_fee_1,omitempty" url:"refund_fee_1,omitempty"`                       // 是 申请退款金额
+		RefundFee2           int    `xml:"refund_fee_2,omitempty" url:"refund_fee_2,omitempty"`                       // 是 申请退款金额
+		RefundFee3           int    `xml:"refund_fee_3,omitempty" url:"refund_fee_3,omitempty"`                       // 是 申请退款金额
+		RefundFee4           int    `xml:"refund_fee_4,omitempty" url:"refund_fee_4,omitempty"`                       // 是 申请退款金额
+		SettlementRefundFee0 int    `xml:"settlement_refund_fee_0,omitempty" url:"settlement_refund_fee_0,omitempty"` // 否 退款金额
+		SettlementRefundFee1 int    `xml:"settlement_refund_fee_1,omitempty" url:"settlement_refund_fee_1,omitempty"` // 否 退款金额
+		SettlementRefundFee2 int    `xml:"settlement_refund_fee_2,omitempty" url:"settlement_refund_fee_2,omitempty"` // 否 退款金额
+		SettlementRefundFee3 int    `xml:"settlement_refund_fee_3,omitempty" url:"settlement_refund_fee_3,omitempty"` // 否 退款金额
+		SettlementRefundFee4 int    `xml:"settlement_refund_fee_4,omitempty" url:"settlement_refund_fee_4,omitempty"` // 否 退款金额
 		CouponTypeNM         string `xml:"coupon_type_$n_$m,omitempty" url:"coupon_type_$n_$m,omitempty"`             // 否 代金券类型
 		CouponRefundFee0     int    `xml:"coupon_refund_fee_0,omitempty" url:"coupon_refund_fee_0,omitempty"`         // 否 总个代金券退款金额
 		CouponRefundFee1     int    `xml:"coupon_refund_fee_1,omitempty" url:"coupon_refund_fee_1,omitempty"`         // 否 总个代金券退款金额
