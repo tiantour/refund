@@ -23,15 +23,15 @@ type (
 	}
 	// Request request
 	Request struct {
-		TransactionID string `xml:"transaction_id,omitempty" url:"transaction_id,omitempty"`   // 是 微信支付订单号
-		OutTradeNo    string `xml:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`       // 是 商户订单号
-		OutRefundNo   string `xml:"out_refund_no,omitempty" url:"out_refund_no,omitempty"`     // 是 商户退款单号
-		TotalFee      int    `xml:"total_fee,omitempty" url:"total_fee,omitempty"`             // 是 总金额
-		RefundFee     int    `xml:"refund_fee,omitempty" url:"refund_fee,omitempty"`           // 是 退款金额
-		RefundFeeType string `xml:"refund_fee_type,omitempty" url:"refund_fee_type,omitempty"` // 否 货币类型
-		RefundDesc    string `xml:"refund_desc,omitempty" url:"refund_desc,omitempty"`         // 否 退款原因
-		RefundAccount string `xml:"refund_account,omitempty" url:"refund_account,omitempty"`   // 否 资金来源
-		Offset        int    `xml:"offset,omitempty" url:"offset,omitempty"`                   // 否 偏移量
+		TransactionID string `xml:"transaction_id,omitempty" url:"transaction_id,omitempty"`                                   // 是 微信支付订单号
+		OutTradeNo    string `xml:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`                                       // 是 商户订单号
+		OutRefundNo   string `xml:"out_refund_no,omitempty" url:"out_refund_no,omitempty"`                                     // 是 商户退款单号
+		TotalFee      int    `xml:"total_fee,omitempty" url:"total_fee,omitempty" json:"total_fee,omitempty"`                  // 是 总金额
+		RefundFee     int    `xml:"refund_fee,omitempty" url:"refund_fee,omitempty" json:"refund_fee,omitempty"`               // 是 退款金额
+		RefundFeeType string `xml:"refund_fee_type,omitempty" url:"refund_fee_type,omitempty" json:"efund_fee_type,omitempty"` // 否 货币类型
+		RefundDesc    string `xml:"refund_desc,omitempty" url:"refund_desc,omitempty" json:"refund_desc,omitempty"`            // 否 退款原因
+		RefundAccount string `xml:"refund_account,omitempty" url:"refund_account,omitempty"`                                   // 否 资金来源
+		Offset        int    `xml:"offset,omitempty" url:"offset,omitempty"`                                                   // 否 偏移量
 	}
 	// Response response
 	Response struct {
