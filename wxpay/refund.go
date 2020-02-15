@@ -101,7 +101,6 @@ func (r *Refund) Query(args *Sign) (*Query, error) {
 		Body:   body,
 		Header: header,
 	})
-	fmt.Println(string(body), err)
 	if err != nil {
 		return nil, err
 	}

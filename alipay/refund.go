@@ -43,7 +43,6 @@ func (r *Refund) Apply(str string) (*Notice, error) {
 		Method: "GET",
 		URL:    fmt.Sprintf("https://openapi.alipay.com/gateway.do?%s", str),
 	})
-	fmt.Println(string(body), err)
 	if err != nil {
 		return nil, err
 	}
@@ -54,7 +53,7 @@ func (r *Refund) Apply(str string) (*Notice, error) {
 	}
 	notice := result.AlipayTradeFefundResponse
 	if notice.Code != "10000" {
-		return nil, errors.New(notice.Msg)
+		return nil, errors.New(notice.SumbMsg)
 	}
 	return notice, nil
 }
@@ -75,7 +74,7 @@ func (r *Refund) Query(str string) (*Query, error) {
 	}
 	query := result.AlipayTradeFastpayRfundQueryResponse
 	if query.Code != "10000" {
-		return nil, errors.New(query.Msg)
+		return nil, errors.New(query.SumbMsg)
 	}
 	return query, nil
 }
