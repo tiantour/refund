@@ -18,12 +18,12 @@ type (
 	}
 	// Request request
 	Request struct {
-		OutTradeNo              string  `json:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`                           // 是 单号
+		OutTradeNo              string  `json:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`                           // 是 支付单号
 		TradeNo                 string  `json:"trade_no,omitempty" url:"trade_no,omitempty"`                                   // 否 支付宝交易号
 		RefundAmount            float64 `json:"refund_amount,omitempty" url:"refund_amount,omitempty"`                         // 是 退款金额
-		RefundCurrency          float64 `json:"refund_currency,omitempty" url:"refund_currency,omitempty"`                     // 是 退款币种
+		RefundCurrency          string  `json:"refund_currency,omitempty" url:"refund_currency,omitempty"`                     // 是 退款币种
 		RefundReason            string  `json:"refund_reason,omitempty" url:"refund_reason,omitempty"`                         // 否 退款说明
-		OutRequestNo            string  `json:"out_request_id,omitempty" url:"out_request_id,omitempty"`                       // 否 标识一次退款请求
+		OutRequestNo            string  `json:"out_request_id,omitempty" url:"out_request_id,omitempty"`                       // 否 退款单号
 		OperatorID              string  `json:"operator_id,omitempty" url:"operator_id,omitempty"`                             // 否 操作员编号
 		TerminalID              string  `json:"terminal_id,omitempty" url:"terminal_id,omitempty"`                             // 否 终端编号
 		GoodsDetail             string  `json:"goods_detail,omitempty" url:"goods_detail,omitempty"`                           // 否 商品明细
@@ -46,21 +46,21 @@ type (
 	// Notice notice
 	Notice struct {
 		Response
-		TradeNo                      string  `json:"trade_no,omitempty" url:"trade_no,omitempty"`                                               // 是 交易号
-		OutTradeNo                   string  `json:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`                                       // 是 单号
-		BuyerLoginID                 string  `json:"buyer_login_id,omitempty" url:"buyer_login_id,omitempty"`                                   // 是 买家帐号
-		FundChange                   string  `json:"fund_change,omitempty" url:"fund_change,omitempty"`                                         // 是 资金编号
-		RefundFee                    float64 `json:"refund_fee,omitempty" url:"refund_fee,omitempty"`                                           // 是 退款金额
-		RefundCurrency               string  `json:"refund_currency,omitempty" url:"refund_currency,omitempty"`                                 // 否 退款币种
-		GmtRefundPay                 string  `json:"gmt_refund_pay,omitempty" url:"gmt_refund_pay,omitempty"`                                   // 是 退款支付时间
-		RefundDetailItemList         string  `json:"refund_detail_item_list,omitempty" url:"refund_detail_item_list,omitempty"`                 // 否 退款使用的资金渠道
-		StoreName                    string  `json:"store_name,omitempty" url:"store_name,omitempty"`                                           // 是 店铺名称
-		BuyerUserID                  string  `json:"buyer_user_id,omitempty" url:"buyer_user_id,omitempty"`                                     // 否 卖家用户
-		RefundPresetPaytoolList      string  `json:"refund_preset_paytool_list,omitempty" url:"refund_preset_paytool_list,omitempty"`           // 否 退回的前置资产列表
-		RefundSettlementID           string  `json:"refund_settlement_id,omitempty" url:"refund_settlement_id,omitempty"`                       // 否 退款清算编号
-		PresentRefundBuyerAmount     string  `json:"present_refund_buyer_amount,omitempty" url:"present_refund_buyer_amount,omitempty"`         // 否 本次退款金额中买家退款金额
-		PresentRefundDiscountAmount  string  `json:"present_refund_discount_amount,omitempty" url:"present_refund_discount_amount,omitempty"`   // 否 本次退款金额中平台优惠退款金额
-		PresentRefundMdiscountAmount string  `json:"present_refund_mdiscount_amount,omitempty" url:"present_refund_mdiscount_amount,omitempty"` // 否 本次退款金额中商家优惠退款金额
+		TradeNo                      string `json:"trade_no,omitempty" url:"trade_no,omitempty"`                                               // 是 交易号
+		OutTradeNo                   string `json:"out_trade_no,omitempty" url:"out_trade_no,omitempty"`                                       // 是 单号
+		BuyerLogonID                 string `json:"buyer_logon_id,omitempty" url:"buyer_logon_id,omitempty"`                                   // 是 买家帐号
+		FundChange                   string `json:"fund_change,omitempty" url:"fund_change,omitempty"`                                         // 是 资金编号
+		RefundFee                    string `json:"refund_fee,omitempty" url:"refund_fee,omitempty"`                                           // 是 退款金额
+		RefundCurrency               string `json:"refund_currency,omitempty" url:"refund_currency,omitempty"`                                 // 否 退款币种
+		GmtRefundPay                 string `json:"gmt_refund_pay,omitempty" url:"gmt_refund_pay,omitempty"`                                   // 是 退款支付时间
+		SendBackFee                  string `json:"send_back_fee,omitempty" url:"send_back_fee,omitempty"`                                     // 否 本次商户实际退回金额；
+		StoreName                    string `json:"store_name,omitempty" url:"store_name,omitempty"`                                           // 是 店铺名称
+		BuyerUserID                  string `json:"buyer_user_id,omitempty" url:"buyer_user_id,omitempty"`                                     // 否 卖家用户
+		RefundPresetPaytoolList      string `json:"refund_preset_paytool_list,omitempty" url:"refund_preset_paytool_list,omitempty"`           // 否 退回的前置资产列表
+		RefundSettlementID           string `json:"refund_settlement_id,omitempty" url:"refund_settlement_id,omitempty"`                       // 否 退款清算编号
+		PresentRefundBuyerAmount     string `json:"present_refund_buyer_amount,omitempty" url:"present_refund_buyer_amount,omitempty"`         // 否 本次退款金额中买家退款金额
+		PresentRefundDiscountAmount  string `json:"present_refund_discount_amount,omitempty" url:"present_refund_discount_amount,omitempty"`   // 否 本次退款金额中平台优惠退款金额
+		PresentRefundMdiscountAmount string `json:"present_refund_mdiscount_amount,omitempty" url:"present_refund_mdiscount_amount,omitempty"` // 否 本次退款金额中商家优惠退款金额
 	}
 	// Query query
 	Query struct {
