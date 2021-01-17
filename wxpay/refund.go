@@ -48,7 +48,6 @@ func (r *Refund) Apply(args *Sign, certPath, keyPath string) (*Result, error) {
 		Cert:   certPath,
 		Key:    keyPath,
 	})
-	fmt.Println(1, string(body), err)
 	if err != nil {
 		return nil, err
 	}
