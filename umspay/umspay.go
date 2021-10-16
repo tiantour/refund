@@ -61,7 +61,7 @@ type (
 		BankInfo            string `json:"bankInfo,omitempty"`            // 否 银行信息
 		PayTime             string `json:"payTime,omitempty"`             // 否 支付时间 格式yyyy-MM-dd HH:mm:ss
 		SettleDate          string `json:"settleDate,omitempty"`          // 否 结算日期 格式yyyy-MM-dd
-		SendBackAmount      string `json:"sendBackAmount,omitempty"`      // 否 商户实退金额
+		SendBackAmount      int    `json:"sendBackAmount,omitempty"`      // 否 商户实退金额
 	}
 
 	// Order suborder
